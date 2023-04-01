@@ -10,7 +10,7 @@ export const recentProjects = [
 		tech: ["React", "TypeScript", "Vite", "TailwindCSS"],
 	},
 	{
-		title: "Highly optimized static website",
+		title: "Optimized static website",
 		description: [
 			"My goal was to create a static website with perfect score from Google PageSpeed Insights and GTmetrix.",
 			"Lighthouse is launching a confetti 🎉 with 4x100/100 score.",
