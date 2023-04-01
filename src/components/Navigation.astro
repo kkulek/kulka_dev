@@ -1,0 +1,76 @@
+---
+import Button from "./reusables/Button.astro";
+
+type Navigation = {
+	text: string;
+	link: string;
+};
+
+const nav = [
+	{
+		text: "Home",
+		link: "#",
+	},
+	{
+		text: "Projects",
+		link: "#projects",
+	},
+	{
+		text: "About me",
+		link: "#about",
+	},
+	{
+		text: "Contact",
+		link: "#contact",
+	},
+	{
+		text: "CV",
+		link: "#cv",
+	},
+];
+---
+
+<nav>
+	<div class="-my-2 -mr-2 md:hidden">
+		<button
+			type="button"
+			class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-500"
+			aria-expanded="false"
+		>
+			<span class="sr-only">Open menu</span>
+
+			<svg
+				class="h-6 w-6"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				aria-hidden="true"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+			</svg>
+		</button>
+	</div>
+	<ul class="hidden md:flex gap-3 lg:gap-6">
+		{
+			nav.map((item: Navigation, index) => (
+				<li>
+					{index === nav.length - 1 ? (
+						<Button href={item.link}>{item.text}</Button>
+					) : (
+						<a
+							class="mx-4 relative transition-all duration-600 border-transparent hover:border-black hover:border-b-2"
+							href={item.link}
+						>
+							{item.text}
+						</a>
+					)}
+				</li>
+			))
+		}
+	</ul>
+</nav>

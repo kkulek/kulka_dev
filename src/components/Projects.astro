@@ -1,0 +1,49 @@
+---
+import Button from "./reusables/Button.astro";
+import { recentProjects, earlyProjects } from "../data/projects";
+
+type Project = {
+	title: string;
+	description: string[];
+	live: string;
+	repo: string;
+	tech: string[];
+	img?: string;
+};
+---
+
+<section class="pb-32">
+	<h2 class="ml-4 lg:ml-0 text-4xl font-bold mb-32">
+		Recent projects <span class="font-normal">(2013)</span>
+	</h2>
+	<div class="space-y-32">
+		{
+			recentProjects.map((item: Project) => (
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
+					<div class="w-full aspect-video bg-stone-950 lg:order-2" />
+					<div class="ml-4 lg:ml-0 ">
+						<div class="space-y-6">
+							<div class="space-y-4">
+								<h3 class="text-2xl font-bold">{item.title}</h3>
+								<div class="space-y-2">
+									{item.description.map((desc) => (
+										<p class="max-w-prose">{desc}</p>
+									))}
+								</div>
+								<p>
+									<span class="font-bold">Stack:</span> {item.tech.join(", ")}
+								</p>
+							</div>
+							<div class="flex gap-4">
+								<Button href={item.live} primary>
+									Live website
+								</Button>
+								<Button href={item.repo}>Code</Button>
+							</div>
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>

@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import logo from "../images/temp-logo.png";
+import Navigation from "../components/Navigation.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import { Image } from "@astrojs/image/components";
+---
+
+<Layout title="Welcome to Astro.">
+	<div class="container mx-auto">
+		<div class="fixed container bg-white shadow-sm">
+			<header class="flex items-center justify-between pt-2">
+				<a href="#"> <Image src={logo} alt="Logo" class="h-7 w-fit" /></a>
+				<Navigation />
+			</header>
+		</div>
+	</div>
+	<main class="h-screen">
+		<div
+			class="container mx-auto h-full max-h-[900px] pt-36 pb-32 flex items-center"
+		>
+			<Hero />
+		</div>
+		<div class="container mx-auto">
+			<Projects />
+		</div>
+	</main>
+</Layout>

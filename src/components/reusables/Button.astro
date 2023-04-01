@@ -1,0 +1,21 @@
+---
+type Props = {
+	href: string;
+	primary?: boolean;
+	blank?: boolean;
+};
+
+const { href, primary, blank } = Astro.props as Props;
+---
+
+<!-- TODO: hover Effect -->
+
+<a
+	href={href}
+	class={primary
+		? "py-1 px-4 bg-black text-white text-base border border-black transition-color duration-500"
+		: "py-1 px-4 bg-white text-black border border-black text-base transition-color duration-500"}
+	target={blank && "_blank"}
+>
+	<slot />
+</a>
