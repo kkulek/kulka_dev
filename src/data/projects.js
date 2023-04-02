@@ -51,6 +51,6 @@ export const earlyProjects = [
 		decription: "Multi page business website.",
 		live: "#",
 		repo: "#",
-		tech: ["React", "TailwindCSS"],
+		tech: ["HTML", "JavaScript", "SASS"],
 	},
 ];

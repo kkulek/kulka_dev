@@ -1,0 +1,66 @@
+---
+type Contact = {
+	text: string;
+	link: string;
+	icon: string;
+};
+
+import AtSymbol from "./icons/AtSymbol.astro";
+import Phone from "./icons/Phone.astro";
+import Document from "./icons/Document.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import GitHub from "./icons/GitHub.astro";
+
+const contactData = [
+	{
+		text: "krzysztof.kulka@hotmail.com",
+		link: "mailto:krzysztof.kulka@hotmail.com",
+		icon: "AtSymbol",
+	},
+	{
+		text: "570 042 513",
+		link: "tel:570042513",
+		icon: "Phone",
+	},
+	{
+		text: "LinkedIn",
+		link: "https://www.linkedin.com/in/krzysztofkulka/",
+		icon: "LinkedIn",
+	},
+	{
+		text: "GitHub",
+		link: "https://www.github.com/kkulek",
+		icon: "GitHub",
+	},
+	{
+		text: "CV",
+		link: "#",
+		icon: "Document",
+	},
+];
+---
+
+<section class="flex items-center text-slate-50" id="contact">
+	<div class="mx-4 lg:ml-0">
+		<h2 class="text-4xl font-bold">Contact:</h2>
+		<div class="h-8 w-8 relative"></div>
+		<div class="max-w-md space-y-4">
+			{
+				contactData.map((item) => (
+					<div class="flex gap-4 items-center">
+						<div class="h-8 w-8 relative">
+							{item.icon === "AtSymbol" && <AtSymbol />}
+							{item.icon === "Phone" && <Phone />}
+							{item.icon === "Document" && <Document />}
+							{item.icon === "LinkedIn" && <LinkedIn />}
+							{item.icon === "GitHub" && <GitHub />}
+						</div>
+						<a href={item.link} target="_blank" rel="nofollow" class="text-xl">
+							{item.text}
+						</a>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
