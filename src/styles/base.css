@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .textGradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-stone-800 via-slate-800 to-stone-950;
+    }
+}
