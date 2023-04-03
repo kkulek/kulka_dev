@@ -1,14 +1,16 @@
 ---
 import Button from "./reusables/Button.astro";
+import HeroAnimated from "./HeroAnimated.jsx";
 ---
 
 <div class="flex flex-col gap-8 items-center w-full text-center">
-	<div class="space-y-2">
-		<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">Junior Frontend Developer</h1>
-		<p class="text-xl sm:text-2xl md:text-3xl font-light">with Digital Marketing background</p>
-	</div>
-	<div class="flex gap-6">
+	<HeroAnimated client:idle />
+	<!-- <div class="space-y-2">
+		<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold">Frontend Developer</h1>
+		<p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light">with Digital Marketing background</p>
+	</div> -->
+	<!-- <div class="flex gap-6">
         <Button href="#" primary>Projects</Button>
         <Button href="https://github.com/kkulek" blank>GitHub</Button>
-	</div>
+	</div>  -->
 </div>
