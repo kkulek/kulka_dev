@@ -4,6 +4,6 @@
 
 @layer utilities {
     .textGradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-stone-800 via-slate-800 to-stone-950;
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-stone-700 via-slate-900 to-stone-600;
     }
 }
