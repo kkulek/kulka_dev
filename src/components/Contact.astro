@@ -1,66 +1,63 @@
 ---
-type Contact = {
-	text: string;
-	link: string;
-	icon: string;
-};
-
 import AtSymbol from "./icons/AtSymbol.astro";
 import Phone from "./icons/Phone.astro";
-import Document from "./icons/Document.astro";
-import LinkedIn from "./icons/LinkedIn.astro";
-import GitHub from "./icons/GitHub.astro";
+import Button from "./reusables/Button.astro";
 
-const contactData = [
-	{
-		text: "krzysztof.kulka@hotmail.com",
-		link: "mailto:krzysztof.kulka@hotmail.com",
-		icon: "AtSymbol",
-	},
-	{
-		text: "570 042 513",
-		link: "tel:570042513",
-		icon: "Phone",
-	},
-	{
-		text: "LinkedIn",
-		link: "https://www.linkedin.com/in/krzysztofkulka/",
-		icon: "LinkedIn",
-	},
-	{
-		text: "GitHub",
-		link: "https://www.github.com/kkulek",
-		icon: "GitHub",
-	},
-	{
-		text: "CV",
-		link: "#",
-		icon: "Document",
-	},
-];
+const contactData = {
+	contact: [
+		{
+			text: "krzysztof.kulka@hotmail.com",
+			link: "mailto:krzysztof.kulka@hotmail.com",
+			icon: "AtSymbol",
+		},
+		{
+			text: "570 042 513",
+			link: "tel:570042513",
+			icon: "Phone",
+		},
+	],
+	social: [
+		{
+			text: "LinkedIn",
+			link: "https://www.linkedin.com/in/krzysztofkulka/",
+		},
+		{
+			text: "GitHub",
+			link: "https://www.github.com/kkulek",
+		},
+		{
+			text: "CV",
+			link: "#",
+		},
+	],
+};
 ---
 
-<section class="flex items-center text-slate-50" id="contact">
-	<div class="mx-4 lg:ml-0">
-		<h2 class="text-4xl font-bold">Contact:</h2>
-		<div class="h-8 w-8 relative"></div>
-		<div class="max-w-md space-y-4">
-			{
-				contactData.map((item) => (
-					<div class="flex gap-4 items-center">
-						<div class="h-8 w-8 relative">
+<div class="-mt-8 lg:-mt-32 text-slate-50 space-y-6 relative" id="contact">
+	<h2 class="text-3xl font-bold textGradientLight">Contact:</h2>
+	<div class="flex flex-col md:flex-row gap-4 md:gap-12">
+		{
+			contactData.contact.map((item) => (
+				<a href={item.link} target="_blank" rel="nofollow" class="block">
+					<div class="flex gap-1 items-center">
+						<div class="h-5 w-5 relative">
 							{item.icon === "AtSymbol" && <AtSymbol />}
 							{item.icon === "Phone" && <Phone />}
-							{item.icon === "Document" && <Document />}
-							{item.icon === "LinkedIn" && <LinkedIn />}
-							{item.icon === "GitHub" && <GitHub />}
 						</div>
-						<a href={item.link} target="_blank" rel="nofollow" class="text-xl">
-							{item.text}
-						</a>
+						<p class="hover:underline transition duration-500">{item.text}</p>
 					</div>
-				))
-			}
-		</div>
+				</a>
+			))
+		}
 	</div>
-</section>
+
+	<div class="flex gap-4 md:gap-12">
+		{
+			contactData.social.map((item) => (
+				<Button href={item.link} blank>
+					{item.text}
+				</Button>
+			))
+		}
+	</div>
+</div>

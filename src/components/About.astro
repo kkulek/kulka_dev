@@ -3,9 +3,9 @@ import { Image } from "@astrojs/image/components";
 import kulkaImg from "../images/temp-picture.jpg";
 ---
 
-<section class="flex items-center text-slate-50">
-	<div class="mx-4 lg:ml-0 space-y-8">
-		<h2 class="text-4xl font-bold">About me:</h2>
+<div class="text-slate-50 md:col-span-2 lg:col-span-1 relative">
+	<div class="space-y-8">
+		<h2 class="text-3xl font-bold textGradientLight">About me:</h2>
 		<div class="flex gap-4 items-center">
 			<div class="h-16 w-16 rounded-full relative">
 				<Image
@@ -48,4 +48,4 @@ import kulkaImg from "../images/temp-picture.jpg";
 			<p>I didn’t want to miss that train. One year later, I started coding.</p>
 		</div>
 	</div>
-</section>
+</div>
