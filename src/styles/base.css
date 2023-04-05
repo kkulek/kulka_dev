@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
-    .textGradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-stone-700 via-slate-900 to-stone-600;
-    }
+	.textGradient {
+		@apply bg-clip-text text-transparent bg-gradient-to-r from-stone-700 via-slate-900 to-stone-600;
+	}
+	.textGradientLight {
+		@apply bg-clip-text text-transparent bg-gradient-to-r from-slate-100 via-gray-300 to-slate-100 inline-block;
+	}
 }

@@ -1,0 +1,50 @@
+---
+type DataItem = {
+	type: string;
+	content: string;
+};
+
+const data: DataItem[] = [
+	{
+		type: "Base",
+		content: "HTML, JavaScript, TypeScript",
+	},
+	{
+		type: "Frameworks",
+		content: "React, NextJS, Astro",
+	},
+	{
+		type: "Styling",
+		content: "CSS, SASS, CSS Modules, Tailwindcss",
+	},
+	{
+		type: "Tools",
+		content: "Git, VS Code, Figma, Adobe XD, Sketch, YouTrack, Trello",
+	},
+	{
+		type: "Marketing",
+		content:
+			"Google Analytics, Google Tag Manager, Google Ads, Meta Ads, Zapier, A/B testing, + dozens more apps",
+	},
+	{
+		type: "Learning priorities",
+		content: "TypeScript, SEO, Web Performance, Accessibility",
+	},
+];
+---
+
+<div class="text-slate-50 md:col-span-2 lg:col-span-1">
+	<div class="space-y-6">
+		<h2 class="text-3xl font-bold textGradientLight">Skills:</h2>
+		<dl class="divide-y divide-gray-700">
+			{
+				data.map((item) => (
+					<div class="py-5 grid grid-cols-3 gap-4">
+						<dt class="font-medium text-gray-300">{item.type}</dt>
+						<dd class="col-span-2">{item.content}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</div>
+</div>
