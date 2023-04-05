@@ -15,9 +15,9 @@ export default function HeroAnimated() {
 				<motion.h1
 					initial="initial"
 					animate="animate"
-					transition={{ ease: "easeOut"}}
+					transition={{ ease: "easeOut" }}
 					variants={framerAnimation}
-					className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-stone-800 via-slate-800 to-stone-950"
+					className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold textGradient"
 				>
 					Frontend Developer
 				</motion.h1>

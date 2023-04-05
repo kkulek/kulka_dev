@@ -6,5 +6,5 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), image()]
+  integrations: [react(), tailwind({ config: { applyBaseStyles: false }}), image()]
 });
