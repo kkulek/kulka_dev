@@ -33,10 +33,7 @@ const contactData = {
 };
 ---
 
-<div
-	class="-mt-8 lg:-mt-32 text-slate-50 space-y-6 relative"
-	id="contact"
->
+<div class="-mt-8 lg:-mt-32 text-slate-50 space-y-6 relative" id="contact">
 	<h2 class="text-3xl font-bold textGradientLight">Contact:</h2>
 	<div class="flex flex-col md:flex-row gap-4 md:gap-12">
 		{
@@ -47,16 +44,19 @@ const contactData = {
 							{item.icon === "AtSymbol" && <AtSymbol />}
 							{item.icon === "Phone" && <Phone />}
 						</div>
-						<p class="">{item.text}</p>
+						<p class="hover:underline transition duration-500">{item.text}</p>
 					</div>
 				</a>
 			))
 		}
 	</div>
+
 	<div class="flex gap-4 md:gap-12">
 		{
 			contactData.social.map((item) => (
-				<Button href={item.link} blank>{item.text}</Button>
+				<Button href={item.link} blank>
+					{item.text}
+				</Button>
 			))
 		}
 	</div>
