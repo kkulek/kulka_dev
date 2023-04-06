@@ -1,10 +1,11 @@
 ---
+import { SEO } from "astro-seo";
 export interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-import '../styles/base.css'
+import "../styles/base.css";
 ---
 
 <!DOCTYPE html>
@@ -12,6 +13,14 @@ import '../styles/base.css'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<SEO
+			description="I'm a Frontend Developer with Digital Marketing background. I code with JavaScript, React, TypeScript, NextJS, Astro, Tailwindcss and more."
+			canonical="https://kulka.dev"
+		/>
+		<meta
+			name="keywords"
+			content="frontend, frontend developer, frontend portfolio, krzysztof kulka, digital marketing"
+		/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

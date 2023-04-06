@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function ButtonReact({ href, primary, blank, children }) {
+type Props = {
+	href: string;
+	primary?: boolean;
+	blank?: boolean;
+	children: React.ReactNode;
+};
+
+export default function ButtonReact({ href, primary, blank, children }: Props) {
 	return (
 		<a
 			href={href}
