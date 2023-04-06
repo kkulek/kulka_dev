@@ -10,15 +10,24 @@ import Contact from "../components/Contact.astro";
 import { Image } from "@astrojs/image/components";
 ---
 
-<Layout title="Welcome to Astro.">
-	<div class="container mx-auto">
-		<div class="fixed container bg-white shadow-sm z-10">
-			<header class="flex items-center justify-between p-2">
-				<a href="#"> <Image src={logo} alt="Logo" class="h-7 w-fit" /></a>
-				<Navigation />
-			</header>
-		</div>
+<Layout title="Frontend Developer Portfolio">
+	<head>
+		<meta
+			name="description"
+			content="I'm a Frontend Developer with Digital Marketing background. I code with JavaScript, React, TypeScript, NextJS, Astro, Tailwindcss and more."
+		/>
+	</head>
+	<div
+		class="fixed w-full border-b bg-white/50 hover:bg-white transition-colors duration-500 backdrop-blur z-10"
+	>
+		<header
+			class="flex container mx-auto items-center justify-between p-2 relative"
+		>
+			<a href="#"> <Image src={logo} alt="Logo" class="h-5 md:h-7 w-fit" /></a>
+			<Navigation />
+		</header>
 	</div>
+
 	<main>
 		<div
 			class="h-screen relative bg-gradient-to-b from-white via-violet-50 to-white"
