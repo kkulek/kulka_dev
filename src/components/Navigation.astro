@@ -1,5 +1,6 @@
 ---
 import Button from "./reusables/Button.astro";
+import CV from "../../public/CV-Krzysztof-Kulka.pdf"
 
 type Navigation = {
 	text: string;
@@ -21,7 +22,7 @@ const nav = [
 	},
 	{
 		text: "CV",
-		link: "#cv",
+		link: CV,
 	},
 ];
 ---
@@ -32,7 +33,7 @@ const nav = [
 			nav.map((item: Navigation, index: number) => (
 				<li>
 					{index === nav.length - 1 ? (
-						<Button href={item.link}>{item.text}</Button>
+						<Button href={item.link} blank>{item.text}</Button>
 					) : (
 						<a
 							class="mx-3 md:mx-4 relative transition-all duration-600 pb-2 md:pb-3 hover:border-black hover:border-b-2"
