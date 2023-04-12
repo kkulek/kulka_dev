@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
+import serviceWorker from "astrojs-service-worker";
 
 import partytown from "@astrojs/partytown";
 
@@ -20,5 +21,6 @@ export default defineConfig({
 				forward: ["dataLayer.push"],
 			},
 		}),
+		serviceWorker(),
 	],
 });
