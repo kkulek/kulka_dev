@@ -39,7 +39,7 @@ export default function HeroAnimated() {
 				variants={framerAnimation}
 				className="flex gap-6"
 			>
-				<ButtonReact href="#" primary>
+				<ButtonReact href="#projects" primary>
 					Projects
 				</ButtonReact>
 				<ButtonReact href="https://github.com/kkulek" blank>
